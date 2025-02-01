@@ -605,6 +605,7 @@
 }
 
 [data-bs-theme="light"][data-color-theme="Green_Theme"]:root,
+
 [data-bs-theme="dark"][data-color-theme="Green_Theme"]:root {
   --bs-primary: #2c975f;
   --bs-primary-rgb: 10, 126, 164;
