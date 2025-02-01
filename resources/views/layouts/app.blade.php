@@ -68,8 +68,8 @@
                 >
                   <div class="col-lg-6 col-xl-5 d-none d-lg-block">
                     <div class="text-center text-lg-start">
-                      <img
-                        src="{{asset('design/assets/images/backgrounds/login-security.png')}}"
+                      <img 
+                        src="{{asset('images/bg.jpg')}}"
                         alt=""
                         class="img-fluid"
                       />
