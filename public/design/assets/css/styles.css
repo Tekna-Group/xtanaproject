@@ -606,7 +606,7 @@
 
 [data-bs-theme="light"][data-color-theme="Green_Theme"]:root,
 [data-bs-theme="dark"][data-color-theme="Green_Theme"]:root {
-  --bs-primary: #0a7ea4;
+  --bs-primary: #2c975f;
   --bs-primary-rgb: 10, 126, 164;
   --bs-light-primary: rgba(10, 126, 164, 0.1);
   --bs-primary-bg-subtle: rgba(10, 126, 164, 0.1);
@@ -617,8 +617,8 @@
 }
 [data-bs-theme="light"][data-color-theme="Green_Theme"]:root .btn-primary,
 [data-bs-theme="dark"][data-color-theme="Green_Theme"]:root .btn-primary {
-  --bs-btn-bg: #0a7ea4;
-  --bs-btn-border-color: #0a7ea4;
+  --bs-btn-bg: #2c975f;
+  --bs-btn-border-color: #2c975f;
   --bs-btn-hover-bg: #096b8b;
   --bs-btn-hover-border-color: #096b8b;
 }
