@@ -7,7 +7,19 @@
 <form method="POST" action="{{ route('register') }}">
     @csrf
 
+ 
   <div class="mb-7">
+    @if ($errors->has('password'))
+    <div
+    class="alert customize-alert alert-dismissible border-danger text-danger fade show remove-close-icon"
+    role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="d-flex align-items-center  me-3 me-md-0">
+      <i class="ti ti-info-circle fs-5 me-2 text-danger"></i>
+      {{ ($errors->first('password')) }}
+    </div>
+  </div>
+@endif
     <label
       for="name"
       class="form-label text-dark fw-bold"
@@ -70,7 +82,7 @@
       >Confirm Password</label
     >
     <input
-      type="password" name='confirmpassword'
+      type="password" name='password_confirmation'
       class="form-control py-6"
       id="confirmpassword" required
     />
@@ -81,21 +93,9 @@
 @endif
   </div>
 
-  @if ($errors->has('password'))
-  <span class="invalid-feedback" role="alert">
-      <strong>{{ $errors->first('password') }}</strong>
-  </span>
-@endif
-  <button
-    type='submit'
-    class="btn btn-primary w-100 mb-7 rounded-pill"
-    >Sign Up</button>
+  <button type='submit' class="btn btn-primary w-100 mb-7 rounded-pill"  >Sign Up</button>
   <div class="d-flex align-items-center">
-    <a
-      class="text-primary fw-bold ms-2 fs-3"
-      href="{{url('/')}}"
-      >Back to Login</a
-    >
+    <a  class="text-primary fw-bold ms-2 fs-3" href="{{url('/')}}" >Back to Login</a >
   </div>
 </form>
 @endsection
