@@ -56,12 +56,7 @@
                     alt="Logo-Dark"
                     style='width:178px;height:40px;'
                   />
-                  <img
-                    src="{{asset('images/Logo-Xtana.webp')}}"
-                    class="dark-logo"
-                    alt="Logo-light"
-                        style='width:178px;height:40px;'
-                  />
+                 
                 </a>
                 <div
                   class="row align-items-center justify-content-around pt-6 pb-5"
