@@ -7,6 +7,104 @@
         <div class="wizard-content">
           <form action="#" class="tab-wizard wizard-circle">
             <!-- Step 1 -->
+            <h6>Billing Information</h6>
+            <section>
+              <div class="billing-address-content">
+              
+                <div class="row">
+                    
+                  <hr>
+                  <h3>
+                    Personal Information
+                  </h3>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="validationCustom01">First name</label>
+                <input type="text" class="form-control" id="validationCustom01" name='first_name'
+                  value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->first_name : '' }}" required />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="validationCustom03">Middle name</label>
+                <input type="text" name='middle_name' class="form-control" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->middle_name : '' }}" id="validationCustom03" name='middle_name'
+                  value="" required />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" for="validationCustom02">Last name</label>
+                <input type="text" class="form-control" name='last_name' value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->last_name : '' }}" id="validationCustom02" 
+                  value="" required />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input type="text" class="form-control" id="email"
+                  value="{{auth()->user()->email}}" required  readonly/>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="contact_number">Phone number</label>
+                <input type="text" class="form-control" id="contact_number" name='contact_number'
+                  value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->contact_number : '' }}" required  />
+              </div>
+           
+            </div>
+            <hr>
+            <h3>
+                Billing Information
+              </h3>
+            <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label" for="company">Company (optional)</label>
+                        <input type="text" class="form-control" id="company" name='company' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->company : '' }}"  />
+                      
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label" for="country">Country</label>
+                        <input type="text" class="form-control" id="country" name='country' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->country : '' }}" required />
+                        <div class="invalid-feedback">
+                        Please provide a valid country.
+                        </div>
+                    </div>
+                  <div class="col-md-12 mb-3">
+                    <label class="form-label" for="address">Address</label>
+                    <input type="text" class="form-control" id="address" name='address' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->address : '' }}" required />
+                    <div class="invalid-feedback">
+                      Please provide a valid address.
+                    </div>
+                  </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="validationCustom03">City</label>
+                <input type="text" class="form-control" id="validationCustom03" name='city' value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->city : '' }}" placeholder="" required />
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="form-label" for="validationCustom04">State</label>
+                <input type="text" class="form-control" id="validationCustom04" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->state : '' }}" name='state' placeholder="" required />
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="form-label" for="validationCustom05">Zip Code</label>
+                <input type="text" class="form-control" id="validationCustom05" name='zipcode' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->zipcode : '' }}" required />
+                <div class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check mr-sm-2">
+                <input type="checkbox" class="form-check-input" id="invalidcheck1" required />
+                <label class="form-check-label" for="invalidcheck1">Agree to terms and conditions</label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+              </div>
+            </section>
+            <!-- Step 2 -->
             <h6>Cart</h6>
             <section>
               <div class="table-responsive">
@@ -58,195 +156,16 @@
                   <h5 class="fs-5 fw-semibold mb-4">Order Summary</h5>
                   <div class="d-flex justify-content-between mb-4">
                     <p class="mb-0 fs-4">Sub Total</p>
-                    <h6 class="mb-0 fs-4 fw-semibold">$285</h6>
-                  </div>
-                  <div class="d-flex justify-content-between mb-4">
-                    <p class="mb-0 fs-4">Discount 5%</p>
-                    <h6 class="mb-0 fs-4 fw-semibold text-danger">-$14</h6>
-                  </div>
-                  <div class="d-flex justify-content-between mb-4">
-                    <p class="mb-0 fs-4">Shipping</p>
-                    <h6 class="mb-0 fs-4 fw-semibold">Free</h6>
+                    <h6 class="mb-0 fs-4 fw-semibold">$300.00</h6>
                   </div>
                   <div class="d-flex justify-content-between">
                     <h6 class="mb-0 fs-4 fw-semibold">Total</h6>
-                    <h6 class="mb-0 fs-5 fw-semibold">$271</h6>
+                    <h6 class="mb-0 fs-5 fw-semibold">$300.00</h6>
                   </div>
                 </div>
               </div>
             </section>
-            <!-- Step 2 -->
-            <h6>Billing & address</h6>
-            <section>
-              <div class="billing-address-content">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <div class="card shadow-none border">
-                      <div class="card-body p-4">
-                        <h6 class="mb-3 fs-4 fw-semibold">Johnathan Doe</h6>
-                        <p class="mb-1 fs-2">E601 Vrundavan Heights, godrej garden city - 382481</p>
-                        <h6 class="d-flex align-items-center gap-2 my-4 fw-semibold fs-4"><i
-                            class="ti ti-device-mobile fs-7"></i>9999501050</h6>
-                        <a href="javascript:void(0)" class="btn btn-outline-primary  billing-address">Deliver To
-                          this address</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="card shadow-none border">
-                      <div class="card-body p-4">
-                        <h6 class="mb-3 fs-4 fw-semibold">ParleG Doe</h6>
-                        <p class="mb-1 fs-2">D201 Galexy Heights, godrej garden city - 382481</p>
-                        <h6 class="d-flex align-items-center gap-2 my-4 fw-semibold fs-4"><i
-                            class="ti ti-device-mobile fs-7"></i>9999501050</h6>
-                        <a href="javascript:void(0)" class="btn btn-outline-primary  billing-address">Deliver To
-                          this address</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="card shadow-none border">
-                      <div class="card-body p-4">
-                        <h6 class="mb-3 fs-4 fw-semibold">Guddu Bhaiya</h6>
-                        <p class="mb-1 fs-2">Mumbai khao gali, Behind shukan, godrej garden city - 382481</p>
-                        <h6 class="d-flex align-items-center gap-2 my-4 fw-semibold fs-4"><i
-                            class="ti ti-device-mobile fs-7"></i>9999501050</h6>
-                        <a href="javascript:void(0)" class="btn btn-outline-primary  billing-address">Deliver To
-                          this address</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="order-summary border rounded p-4 my-4">
-                  <div class="p-3">
-                    <h5 class="fs-5 fw-semibold mb-4">Order Summary</h5>
-                    <div class="d-flex justify-content-between mb-4">
-                      <p class="mb-0 fs-4">Sub Total</p>
-                      <h6 class="mb-0 fs-4 fw-semibold">$285</h6>
-                    </div>
-                    <div class="d-flex justify-content-between mb-4">
-                      <p class="mb-0 fs-4">Discount 5%</p>
-                      <h6 class="mb-0 fs-4 fw-semibold text-danger">-$14</h6>
-                    </div>
-                    <div class="d-flex justify-content-between mb-4">
-                      <p class="mb-0 fs-4">Shipping</p>
-                      <h6 class="mb-0 fs-4 fw-semibold">Free</h6>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                      <h6 class="mb-0 fs-4 fw-semibold">Total</h6>
-                      <h6 class="mb-0 fs-5 fw-semibold">$271</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="payment-method-list payment-method">
-                <div class="delivery-option btn-group-active  card shadow-none border">
-                  <div class="card-body p-4">
-                    <h6 class="mb-3 fw-semibold fs-4">Delivery Option</h6>
-                    <div class="btn-group row w-100" role="group" aria-label="Basic radio toggle button group">
-                      <div class="position-relative col-lg-6">
-                        <input type="radio" class="btn-check z-1 top-50 start-0 ms-4 round-16 position-relative"
-                          name="deliveryOpt1" id="btnradio1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary mb-0 p-3 rounded ps-5 w-100" for="btnradio1">
-                          <div class="text-start ps-2">
-                            <h6 class="fs-4 fw-semibold mb-0">Free delivery</h6>
-                            <p class="mb-0 text-muted">Delivered on Firday, May 10</p>
-                          </div>
-                        </label>
-                      </div>
-                      <div class="position-relative col-lg-6">
-                        <input type="radio" class="btn-check z-1 top-50 start-0 ms-4 round-16 position-relative"
-                          name="deliveryOpt1" id="btnradio2" autocomplete="off">
-                        <label class="btn btn-outline-primary mb-0 p-3 rounded ps-5 w-100" for="btnradio2">
-                          <div class="text-start ps-2">
-                            <h6 class="fs-4 fw-semibold mb-0">Fast delivery ($2,00)</h6>
-                            <p class="mb-0 text-muted">Delivered on Wednesday, May 8</p>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="payment-option btn-group-active  card shadow-none border">
-                  <div class="card-body p-4">
-                    <h6 class="mb-3 fw-semibold fs-4">Payment Option</h6>
-                    <div class="row">
-                      <div class="col-lg-8">
-                        <div class="btn-group row" role="group" aria-label="Basic radio toggle button group">
-                          <div class="position-relative col-12 mb-3">
-                            <input type="radio"
-                              class="btn-check z-1 top-50 start-0 ms-4 round-16 position-relative"
-                              name="paymentType1" id="btnradio3" autocomplete="off" checked>
-                            <label class="btn btn-outline-primary mb-0 p-3 rounded ps-5 w-100" for="btnradio3">
-                              <div class="d-flex align-items-center">
-                                <div class="text-start ps-2">
-                                  <h6 class="fs-4 fw-semibold mb-0">Pay with Paypal</h6>
-                                  <p class="mb-0 text-muted">You will be redirected to PayPal website to
-                                    complete your purchase securely.</p>
-                                </div>
-                                <img src="../assets/images/svgs/paypal.svg" alt=""
-                                  class="img-fluid ms-auto">
-                              </div>
-                            </label>
-                          </div>
-                          <div class="position-relative col-12 mb-3">
-                            <input type="radio"
-                              class="btn-check z-1 top-50 start-0 ms-4 round-16 position-relative"
-                              name="paymentType1" id="btnradio4" autocomplete="off">
-                            <label class="btn btn-outline-primary mb-0 p-3 rounded ps-5 w-100" for="btnradio4">
-                              <div class="d-flex align-items-center">
-                                <div class="text-start ps-2">
-                                  <h6 class="fs-4 fw-semibold mb-0">Credit / Debit Card</h6>
-                                  <p class="mb-0 text-muted">We support Mastercard, Visa, Discover and Stripe.
-                                  </p>
-                                </div>
-                                <img src="../assets/images/svgs/mastercard.svg" alt=""
-                                  class="img-fluid ms-auto">
-                              </div>
-                            </label>
-                          </div>
-                          <div class="position-relative col-12">
-                            <input type="radio"
-                              class="btn-check z-1 top-50 start-0 ms-4 round-16 position-relative"
-                              name="paymentType1" id="btnradio5" autocomplete="off">
-                            <label class="btn btn-outline-primary mb-0 p-3 rounded ps-5 w-100" for="btnradio5">
-                              <div class="text-start ps-2">
-                                <h6 class="fs-4 fw-semibold mb-0">Cash on Delivery</h6>
-                                <p class="mb-0 text-muted">Pay with cash when your order is delivered.</p>
-                              </div>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4">
-                        <img src="../assets/images/products/payment.svg" alt="" class="img-fluid">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="order-summary border rounded p-4 my-4">
-                  <div class="p-3">
-                    <h5 class="fs-5 fw-semibold mb-4">Order Summary</h5>
-                    <div class="d-flex justify-content-between mb-4">
-                      <p class="mb-0 fs-4">Sub Total</p>
-                      <h6 class="mb-0 fs-4 fw-semibold">$285</h6>
-                    </div>
-                    <div class="d-flex justify-content-between mb-4">
-                      <p class="mb-0 fs-4">Discount 5%</p>
-                      <h6 class="mb-0 fs-4 fw-semibold text-danger">-$14</h6>
-                    </div>
-                    <div class="d-flex justify-content-between mb-4">
-                      <p class="mb-0 fs-4">Shipping</p>
-                      <h6 class="mb-0 fs-4 fw-semibold">Free</h6>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                      <h6 class="mb-0 fs-4 fw-semibold">Total</h6>
-                      <h6 class="mb-0 fs-5 fw-semibold">$271</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+         
             <!-- Step 3 -->
             <h6>Payment</h6>
             <section class="payment-method text-center">
