@@ -48,7 +48,7 @@
               class="auth-login-wrapper card mb-0 container position-relative z-1 h-100 max-h-770"
               data-simplebar
             >
-              <div class="card-body">
+              <div class="card-body mt-5">
                 <a href="https://xtana.ai/" class="" target='_blank'>
                   <img
                     src="{{asset('images/Logo-Xtana.webp')}}"
