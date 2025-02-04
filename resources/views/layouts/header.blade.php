@@ -76,6 +76,36 @@
               <span class="hide-menu ps-1">Dashboard</span>
             </a>
           </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link has-arrow success-hover-bg" href="#" aria-expanded="false">
+              <span class="aside-icon p-2 bg-success-subtle rounded-1">
+                <iconify-icon icon="solar:smart-speaker-minimalistic-line-duotone" class="fs-6"></iconify-icon>
+              </span>
+              <span class="hide-menu ps-1">Billing</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+              <li class="sidebar-item">
+                <a href="{{url('invoices')}}" class="sidebar-link">
+                  <span class="sidebar-icon"></span>
+                  <span class="hide-menu">View Invoices</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="{{url('credit-cards')}}" class="sidebar-link">
+                  <span class="sidebar-icon"></span>
+                  <span class="hide-menu">Credit Cards</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link primary-hover-bg" href="{{url('chat')}}" aria-expanded="false">
+              <span class="aside-icon p-2 bg-primary-subtle rounded-1">
+                <iconify-icon icon="solar:chat-round-unread-line-duotone" class="fs-6"></iconify-icon>
+              </span>
+              <span class="hide-menu ps-1">Chat</span>
+            </a>
+          </li>
           <!-- ============================= -->
           <!-- Apps -->
           <!-- ============================= -->
@@ -925,6 +955,7 @@
     
     </script>
   
+    <script src="{{asset('design/assets/js/vendor.min.js')}}"></script>
     <script src="{{asset('design/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('design/assets/libs/simplebar/dist/simplebar.min.js')}}"></script>
     <script src="{{asset('design/assets/js/theme/app.init.js')}}"></script>

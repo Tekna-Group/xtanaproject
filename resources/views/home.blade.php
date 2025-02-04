@@ -1,209 +1,177 @@
 @extends('layouts.header')
 
 @section('content')
+          <div class="row">
+            <div class="col-sm-12 col-lg-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                      <span class="fw-bolder text-uppercase fs-2 d-block mb-7"><h3 >App Level</h3></span>
+                  
+                      <h2 class="fw-bolder fs-12 mb-3">$300.00/Monthly</h2>
+                      <h6>Plus $0.75 per execution of the workflow.</h6>
+                      <ul class="list-unstyled mb-7">
+                        <li class="d-flex align-items-center gap-2 py-2">
+                          {{-- <i class="ti ti-check text-primary fs-4"></i> --}}
+                          <span class="text-dark">Pre-designed workflows ready to use, with minor client-specific adjustments.</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-2 py-2">
+                          {{-- <i class="ti ti-check text-primary fs-4"></i> --}}
+                          <span class="text-dark">IDEAL FOR: Clients seeking solutions with minimal set-up.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-6 col-lg-6">
+                      <span class="fw-bolder text-uppercase fs-2 d-block mb-7"><h3 >Key Features:</h3></span>
+                  
+                      <ul class="list-unstyled mb-7">
+                        <li class="d-flex align-items-center gap-2 py-2">
+                          <i class="ti ti-check text-primary fs-4"></i>
+                          <span class="text-dark">Access to individual applications selected from Xtana's App Store equivalent.</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-2 py-2">
+                          <i class="ti ti-check text-primary fs-4"></i>
+                          <span class="text-dark">Pre-designed standard workflows that are functional and ready to use.</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-2 py-2">
+                          <i class="ti ti-check text-primary fs-4"></i>
+                          <span class="text-dark">Client-specific configuration of these workflows (minor adjustments, not deep customization).</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                    {{-- <button class="btn btn-primary fw-bolder py-6  text-capitalize" data-bs-toggle="modal"
+                    data-bs-target="#bs-example-modal-lg">Get Now</button> --}}
+                    <a href='{{url("checkout")}}'><button class="btn btn-primary fw-bolder py-6  text-capitalize" >Get Now</button></a>
+                    </div>
+                  </div>
+            </div>
+       
+          </div>
 
-<div class="row">
-    <div class="col-lg-6 d-flex align-items-stretch">
-      <div class="card w-100">
-        <div class="card-body border-bottom position-relative">
-          <h5 class="card-title fs-6 mb-1">Congratulations Jonathan</h5>
-          <p class="mb-0">You have done 38% more sales</p>
-          <div class="mt-6">
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex align-items-center mb-9">
-                <div
-                  class="bg-success-subtle p-6 me-3 rounded-circle d-flex align-items-center justify-content-center">
-                  <iconify-icon icon="solar:cart-5-line-duotone" class="fs-7 text-success"></iconify-icon>
-                </div>
-                <div>
-                  <h6 class="mb-1 fs-4">64 new orders</h6>
-                  <p class="mb-0">Processing</p>
-                </div>
-              </li>
-              <li class="d-flex align-items-center mb-9">
-                <div
-                  class="bg-warning-subtle p-6 me-3 rounded-circle d-flex align-items-center justify-content-center">
-                  <iconify-icon icon="solar:pause-line-duotone" class="fs-6 text-warning"></iconify-icon>
-                </div>
-                <div>
-                  <h6 class="mb-1 fs-4">4 orders</h6>
-                  <p class="mb-0">On hold</p>
-                </div>
-              </li>
-              <li class="d-flex align-items-center">
-                <div
-                  class="bg-indigo-subtle p-6 me-3 rounded-circle d-flex align-items-center justify-content-center">
-                  <iconify-icon icon="solar:bicycling-round-bold-duotone"
-                    class="fs-7 text-indigo"></iconify-icon>
-                </div>
-                <div>
-                  <h6 class="mb-1 fs-4">12 orders</h6>
-                  <p class="mb-0">Delivered</p>
-                </div>
-              </li>
-            </ul>
-            <div class="man-working-on-laptop">
-              <img src="{{asset('design/assets/images/backgrounds/man-working-on-laptop.png')}}" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-        <div class="card-body pb-2">
-          <div class="d-flex align-items-baseline justify-content-between">
-            <div>
-              <h5 class="card-title fs-6 mb-1">Total Orders</h5>
-              <p class="mb-0">Weekly order updates</p>
-            </div>
-            <select class="form-select fw-bold w-auto shadow-none">
-              <option value="1">This Week</option>
-              <option value="2">April 2023</option>
-              <option value="3">May 2023</option>
-              <option value="4">June 2023</option>
-            </select>
-          </div>
-          <div id="netsells"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 d-flex align-items-stretch">
-      <div class="row">
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card w-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <h5 class="card-title mb-1">Payments</h5>
-                  <p class="mb-0">Last 7 days</p>
-                </div>
-                <div>
-                  <h5 class="card-title mb-1 text-end">12,389</h5>
-                  <span
-                    class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>
-                </div>
+          <div class="modal fade" id="bs-example-modal-lg" tabindex="-1"
+          aria-labelledby="bs-example-modal-lg" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header d-flex align-items-center">
+                <h4 class="modal-title" id="myLargeModalLabel">
+                  Check Out
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
               </div>
-              <div id="total-orders" class="total-orders-chart my-1"></div>
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <div class="d-flex align-items-center">
-                  <i class="ti ti-circle text-primary fs-4 me-2"></i>
-                  <p class="mb-0">Paypal</p>
-                </div>
-                <p class="mb-0">52%</p>
+              <div class="modal-body">
+                <form class="needs-validation" method="POST" action="{{ url('edit-profile') }}" novalidate>
+                  @csrf
+                  <div class="row">
+                  
+                        <hr>
+                        <h3>
+                          Personal Information
+                        </h3>
+                    <div class="col-md-4 mb-3">
+                      <label class="form-label" for="validationCustom01">First name</label>
+                      <input type="text" class="form-control" id="validationCustom01" name='first_name'
+                        value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->first_name : '' }}" required />
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label class="form-label" for="validationCustom03">Middle name</label>
+                      <input type="text" name='middle_name' class="form-control" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->middle_name : '' }}" id="validationCustom03" name='middle_name'
+                        value="" required />
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label class="form-label" for="validationCustom02">Last name</label>
+                      <input type="text" class="form-control" name='last_name' value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->last_name : '' }}" id="validationCustom02" 
+                        value="" required />
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label" for="email">Email</label>
+                      <input type="text" class="form-control" id="email"
+                        value="{{auth()->user()->email}}" required  readonly/>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label" for="contact_number">Phone number</label>
+                      <input type="text" class="form-control" id="contact_number" name='contact_number'
+                        value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->contact_number : '' }}" required  />
+                    </div>
+                 
+                  </div>
+                  <hr>
+                  <h3>
+                      Billing Information
+                    </h3>
+                  <div class="row">
+                          <div class="col-md-4 mb-3">
+                              <label class="form-label" for="company">Company (optional)</label>
+                              <input type="text" class="form-control" id="company" name='company' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->company : '' }}"  />
+                            
+                          </div>
+                          <div class="col-md-8 mb-3">
+                              <label class="form-label" for="country">Country</label>
+                              <input type="text" class="form-control" id="country" name='country' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->country : '' }}" required />
+                              <div class="invalid-feedback">
+                              Please provide a valid country.
+                              </div>
+                          </div>
+                        <div class="col-md-12 mb-3">
+                          <label class="form-label" for="address">Address</label>
+                          <input type="text" class="form-control" id="address" name='address' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->address : '' }}" required />
+                          <div class="invalid-feedback">
+                            Please provide a valid address.
+                          </div>
+                        </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label" for="validationCustom03">City</label>
+                      <input type="text" class="form-control" id="validationCustom03" name='city' value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->city : '' }}" placeholder="" required />
+                      <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label class="form-label" for="validationCustom04">State</label>
+                      <input type="text" class="form-control" id="validationCustom04" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->state : '' }}" name='state' placeholder="" required />
+                      <div class="invalid-feedback">
+                        Please provide a valid state.
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label class="form-label" for="validationCustom05">Zip Code</label>
+                      <input type="text" class="form-control" id="validationCustom05" name='zipcode' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->zipcode : '' }}" required />
+                      <div class="invalid-feedback">
+                        Please provide a valid zip.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-check mr-sm-2">
+                      <input type="checkbox" class="form-check-input" id="invalidcheck1" required />
+                      <label class="form-check-label" for="invalidcheck1">Agree to terms and conditions</label>
+                      <div class="invalid-feedback">
+                        You must agree before submitting.
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary mt-3 rounded-pill px-4" type="submit">
+                    Pay
+                  </button>
+                  <button type="button" class="btn bg-danger-subtle text-danger mt-3 px-4 waves-effect text-start"
+                  data-bs-dismiss="modal">
+                  Cancel
+                </button>
+                </form>
               </div>
-              <div class="d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center">
-                  <i class="ti ti-circle text-light fs-4 me-2"></i>
-                  <p class="mb-0">Credit Card</p>
-                </div>
-                <p class="mb-0">48%</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card w-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <h5 class="card-title mb-1">Products</h5>
-                  <p class="mb-0">Last 7 days</p>
-                </div>
-                <div>
-                  <h5 class="card-title mb-1 text-end">432</h5>
-                  <span
-                    class="badge rounded-pill bg-success-subtle text-success border-success border text-end">+26.5%</span>
-                </div>
-              </div>
-              <div id="products" class="my-8"></div>
-              <p class="mb-0 text-center">$18k Profit more than last month</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card w-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <h5 class="card-title mb-1">Latest Deal</h5>
-                  <p class="mb-0">Last 7 days</p>
-                </div>
-                <div>
-                  <span
-                    class="badge rounded-pill bg-success-subtle text-success border-success border text-end">86.5%</span>
-                </div>
-              </div>
-              <div class="my-6 py-4">
-                <div class="d-flex align-items-center justify-content-between">
-                  <h5 class="mb-0">$98,500</h5>
-                  <h6 class="mb-0">$1,22,900</h6>
-                </div>
-                <div class="progress bg-light-subtle w-100 my-2">
-                  <div class="progress-bar text-bg-primary" role="progressbar" aria-label="Example 8px high"
-                    style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mb-0">Coupons used: 18/22</p>
-              </div>
-              <h6 class="mb-7">Recent Purchasers</h6>
-              <ul class="hstack mb-0">
-                <li class="ms-n2">
-                  <a href="javascript:void(0)" class="">
-                    <img src="../assets/images/profile/user-2.jpg"
-                      class="rounded-circle border border-2 border-white" width="40" height="40" alt="">
-                  </a>
-                </li>
-                <li class="ms-n2">
-                  <a href="javascript:void(0)" class="">
-                    <img src="../assets/images/profile/user-3.jpg"
-                      class="rounded-circle border border-2 border-white" width="40" height="40" alt="">
-                  </a>
-                </li>
-                <li class="ms-n2">
-                  <a href="javascript:void(0)" class="">
-                    <img src="../assets/images/profile/user-4.jpg"
-                      class="rounded-circle border border-2 border-white" width="40" height="40" alt="">
-                  </a>
-                </li>
-                <li class="ms-n2">
-                  <a href="javascript:void(0)" class="">
-                    <img src="../assets/images/profile/user-5.jpg"
-                      class="rounded-circle border border-2 border-white" width="40" height="40" alt="">
-                  </a>
-                </li>
-                <li class="ms-n2">
-                  <a href="javascript:void(0)"
-                    class="bg-primary-subtle rounded-circle border border-2 border-white d-flex align-items-center justify-content-center round-40">
-                    +8
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card w-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <h5 class="card-title mb-1">Customers</h5>
-                  <p class="mb-0">Last 7 days</p>
-                </div>
-                <div>
-                  <h5 class="card-title mb-1 text-end">6,380</h5>
-                  <span
-                    class="badge rounded-pill bg-success-subtle text-success border-success border text-end">+26.5%</span>
-                </div>
-              </div>
-              <div id="customers" class="my-5"></div>
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <p class="mb-0">April 07 - April 14</p>
-                <p class="mb-0">6,380</p>
-              </div>
-              <div class="d-flex align-items-center justify-content-between">
-                <p class="mb-0">Last Week</p>
-                <p class="mb-0">4,298</p>
+              <div class="modal-footer">
+               
               </div>
             </div>
+            <!-- /.modal-content -->
           </div>
+          <!-- /.modal-dialog -->
         </div>
-      </div>
-    </div>
-  </div>
 @endsection
