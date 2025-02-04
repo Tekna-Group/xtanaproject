@@ -93,15 +93,6 @@
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <div class="form-check mr-sm-2">
-                <input type="checkbox" class="form-check-input" id="invalidcheck1" required />
-                <label class="form-check-label" for="invalidcheck1">Agree to terms and conditions</label>
-                <div class="invalid-feedback">
-                  You must agree before submitting.
-                </div>
-              </div>
-            </div>
               </div>
             </section>
             <!-- Step 2 -->
@@ -174,8 +165,8 @@
               <img src="../assets/images/products/payment.svg" alt="" class="img-fluid mb-4" width="300">
               <p class="mb-0 fs-2">We will send you a notification<br>within 2 days when it ships.</p>
               <div class="d-sm-flex align-items-center justify-content-between my-4">
-                <a href="./eco-checkout.html" class="btn btn-success d-block mb-2 mb-sm-0">Continue Shopping</a>
-                <a href="javascript:void(0)" class="btn btn-primary d-block">Download Receipt</a>
+                {{-- <a href="./eco-checkout.html" class="btn btn-success d-block mb-2 mb-sm-0">Continue Shopping</a> --}}
+                <a href="javascript:void(0)" class="btn btn-primary d-block float-right text-right">Download Receipt</a>
               </div>
             </section>
           </form>

@@ -22,4 +22,9 @@ Route::post('edit-profile','UserController@saveProfile')->name('save-profile');
 
 Route::get('checkout','CheckOutController@index')->name('checkout');
 
+Route::get('invoices','InvoiceController@index')->name('invoices');
+
+
+Route::get('chat','ChatController@index')->name('chat');
+
 });
