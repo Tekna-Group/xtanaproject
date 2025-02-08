@@ -42,10 +42,10 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-sm-6 col-lg-6">
+                    <div class="col-sm-12 col-lg-12 text-center">
                     {{-- <button class="btn btn-primary fw-bolder py-6  text-capitalize" data-bs-toggle="modal"
                     data-bs-target="#bs-example-modal-lg">Get Now</button> --}}
-                    <a href='{{url("checkout")}}'><button class="btn btn-primary fw-bolder py-6  text-capitalize" >Get Now</button></a>
+                    <a href='{{url("checkout")}}'><button class="btn btn-primary fw-bolder py-6  text-capitalize" >Order Now</button></a>
                     </div>
                   </div>
             </div>
