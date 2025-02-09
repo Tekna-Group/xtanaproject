@@ -27,4 +27,9 @@ Route::get('invoices','InvoiceController@index')->name('invoices');
 
 Route::get('chat','ChatController@index')->name('chat');
 
+
+Route::get('credit-cards','CreditCardController@index')->name('credit-cards');
+
+Route::get('/payment','CreditCardController@payment')->name('payment');
+
 });

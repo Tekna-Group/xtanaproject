@@ -1,12 +1,13 @@
 @extends('layouts.header')
 
 @section('content')
+
+<form class="needs-validation" method="POST" action="{{ url('check-out') }}" novalidate>
 <div class="checkout">
   <div class="row">
     <div class="col-lg-6">
       <div class="card ">
         <div class="card-body ">
-            <form class="needs-validation" method="POST" action="{{ url('edit-profile') }}" novalidate>
                 @csrf
                 <div class="row">
                       <h3>
@@ -91,7 +92,7 @@
                 {{-- <button class="btn btn-primary mt-3 rounded-pill px-4" type="submit">
                   Save Profile
                 </button> --}}
-              </form>
+            
         </div>
       </div>
     </div>
@@ -142,11 +143,25 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div id='card-element' class='form-control'>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-lg-12 text-right mt-5">
+            {{-- <button class="btn btn-primary fw-bolder py-6  text-capitalize" data-bs-toggle="modal"
+            data-bs-target="#bs-example-modal-lg">Get Now</button> --}}
+            <button class="btn btn-primary fw-bolder py-6  text-capitalize"  onclick='createToken()' >Pay Now</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+</form>
 @endsection
 @section('javascript')
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
@@ -154,4 +169,35 @@
 <script src="{{asset('design/assets/libs/jquery-validation/dist/jquery.validate.min.js')}}"></script>
 <script src="{{asset('design/assets/js/forms/form-wizard.js')}}"></script>
 <script src="{{asset('design/assets/js/apps/ecommerce.js')}}"></script>
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  var stripe = Stripe("{{ env('STRIPE_KEY') }}");
+  const appearance = {
+      theme: 'stripe',
+
+      variables: {
+        colorPrimary: '#0570de',
+        colorBackground: '#ffffff',
+        colorText: '#30313d',
+        colorDanger: '#df1b41',
+        fontFamily: 'Ideal Sans, system-ui, sans-serif',
+        spacingUnit: '2px',
+        borderRadius: '4px',
+        // See all possible variables below
+      }
+    };
+  var elements = stripe.elements({ appearance});
+
+  var cardElement = elements.create('card');
+  cardElement.mount('#card-element');
+  function createToken()
+  {
+    stripe.createToken(cardElement).then(function(result){
+      console.log(result);
+    });
+  }
+
+</script>
 @endsection

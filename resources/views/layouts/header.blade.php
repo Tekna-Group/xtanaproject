@@ -93,7 +93,7 @@
               <li class="sidebar-item">
                 <a href="{{url('credit-cards')}}" class="sidebar-link">
                   <span class="sidebar-icon"></span>
-                  <span class="hide-menu">Credit Cards</span>
+                  <span class="hide-menu">Cards</span>
                 </a>
               </li>
             </ul>
@@ -397,7 +397,7 @@
       aria-labelledby="offcanvasWithBothOptionsLabel">
       <nav class="sidebar-nav scroll-sidebar">
         <div class="offcanvas-header justify-content-between">
-          <img src="../assets/images/logos/favicon.png" alt="" class="img-fluid" />
+          <img src="{{asset('images/icon.png')}}" alt="" class="img-fluid" />
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body h-n80" data-simplebar>
@@ -972,10 +972,10 @@
     <!-- solar icons -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
-    <script src="{{asset('design/assets/libs/jvectormap/jquery-jvectormap.min.js')}}"></script>
-  <script src="{{asset('design/assets/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
-  <script src="{{asset('design/assets/js/extra-libs/jvectormap/jquery-jvectormap-us-aea-en.js')}}"></script>
-  <script src="{{asset('design/assets/js/dashboards/dashboard.js')}}"></script>
+    {{-- <script src="{{asset('design/assets/libs/jvectormap/jquery-jvectormap.min.js')}}"></script> --}}
+  {{-- <script src="{{asset('design/assets/libs/apexcharts/dist/apexcharts.min.js')}}"></script> --}}
+  {{-- <script src="{{asset('design/assets/js/extra-libs/jvectormap/jquery-jvectormap-us-aea-en.js')}}"></script> --}}
+  {{-- <script src="{{asset('design/assets/js/dashboards/dashboard.js')}}"></script> --}}
 
   @yield('javascript')
 </body>
