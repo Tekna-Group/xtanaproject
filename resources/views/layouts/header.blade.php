@@ -33,8 +33,24 @@
     <link rel="stylesheet" href="{{asset('design/assets/libs/jvectormap/jquery-jvectormap.css')}}">
 
     @yield('header')
+       
+    <style>
+      .loader {
+          position: fixed;
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+          background: url("{{ asset('/images/loader.gif') }}") 50% 50% no-repeat white;
+          opacity: .8;
+          background-size: 120px 120px;
+      }
+    </style>
 </head>
 <body>
+  <div id="loader" style="display:none;" class="loader">
+  </div>
     <div class="preloader">
         <img
           src="{{asset('design/assets/images/logos/loader.svg')}}"
@@ -659,6 +675,9 @@
 
   @yield('javascript')
   <script>
+      function show() {
+            document.getElementById("loader").style.display = "block";
+        }
     function error(error)
     {
       Swal.fire({
@@ -668,5 +687,6 @@
       });
     }
   </script>
+  @include('sweetalert::alert')
 </body>
 </html>

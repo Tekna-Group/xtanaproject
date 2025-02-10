@@ -5,6 +5,7 @@ use App\Invoice;
 use App\InvoiceItem;
 use App\Payment;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CheckOutController extends Controller
 {
@@ -52,7 +53,7 @@ class CheckOutController extends Controller
         $payment->amount = 300.00;
         $payment->last = $request->last;
         $payment->save();
-
+        Alert::success('Successfully Payment Posted')->persistent('Dismiss');
         return redirect('invoices');
     }
 }
