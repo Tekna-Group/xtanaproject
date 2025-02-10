@@ -28,7 +28,7 @@ aria-labelledby="bs-example-modal-md" aria-hidden="true">
                     <address>
                       <h6>To,</h6>
                       <h6 class="fw-bold invoice-customer">
-                        {{$invoice->user->name}},
+                        {{$invoice->user->user_profile ? $invoice->user->user_profile->first_name. " ".$invoice->user->user_profile->last_name : $invoice->user->name}} ,
                       </h6>
                       <p class="ms-4">
                         {{$invoice->user->user_profile ? $invoice->user->user_profile->address : ''}} 
