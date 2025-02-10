@@ -91,6 +91,37 @@
                     </div>
                    
                   </div>
+                  <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product hover-img mb-7">
+                      <div class="product-img position-relative rounded-1 mb-6 overflow-hidden">
+                        <a href="{{url('/')}}"><img src="{{asset('/images/Logo-Xtana.webp')}}" alt=""
+                            class="w-100"></a>
+                        <div
+                          class="cart-wishlist position-absolute top-0 end-0 d-flex align-items-center gap-6 mt-3 me-3">
+                          <a href="javascript:void(0)"
+                            class="bg-white rounded-circle d-flex align-items-center justify-content-center text-dark fs-6 p-2"><i
+                              class="ti ti-heart"></i></a>
+                          <a href="{{url('/')}}"
+                            class="bg-white rounded-circle d-flex align-items-center justify-content-center text-dark fs-6 p-2"><i
+                              class="ti ti-basket"></i></a>
+                        </div>
+                      </div>
+                      <div>
+                        <a href="{{url('/')}}">
+                          <h5 class="mb-2">HR Workflow</h5>
+                        </a>
+                        {{-- <div class="d-flex align-items-center mb-2">
+                          <i class="ti ti-star-filled text-warning fs-4 me-1"></i>
+                          <h6 class="mb-0 me-1">4.8</h6>
+                          <p class="mb-0">(87)</p>
+                        </div> --}}
+                        <h6 class="mb-0 fs-4 mb-3">$16.25 /month </h6>
+                        <a href='{{url("/")}}'><button class="btn btn-primary fw-bolder py-6 btn-sm  text-capitalize" >Order Now</button></a> 
+                      </div>
+                   
+                    </div>
+                   
+                  </div>
                  
                 </div>
               </div>
