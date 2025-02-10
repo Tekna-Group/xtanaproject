@@ -14,7 +14,7 @@ aria-labelledby="bs-example-modal-md" aria-hidden="true">
         Reference #: {{$invoice->payment->token_id}}
       </h4>
       <hr>
-      <h6>Amount: $ {{number_format($invoice->payment->sum('amount'),2)}}</h6>
+      <h6>Amount: $ {{number_format(($invoice->payment->amount),2)}}</h6>
       <h6>Card: ****** {{$invoice->payment->last}}</h6>
       
     </div>

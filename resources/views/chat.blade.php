@@ -67,10 +67,10 @@
             </div>
             <div class="d-flex parent-chat-box">
               <div class="chat-box w-xs-100 w-100">
-                <div class="chat-box-inner p-9" data-simplebar>
+                <div class="chat-box-inner p-4" data-simplebar>
                   
                 </div>
-                <div class="px-9 py-6 border-top chat-send-message-footer">
+                <div class="px-2 py-6 border-top chat-send-message-footer">
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center gap-2 w-85">
                       <a class="position-relative nav-icon-hover z-index-5" href="javascript:void(0)">
