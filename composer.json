@@ -14,7 +14,8 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "omnipay/omnipay": "^3.0",
-        "omnipay/paypal": "3.*"
+        "omnipay/paypal": "3.*",
+        "stripe/stripe-php": "^16.5"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

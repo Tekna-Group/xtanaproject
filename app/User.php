@@ -41,4 +41,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(UserProfile::class,'id','user_id');
     }
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
 }

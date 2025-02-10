@@ -1,8 +1,10 @@
 @extends('layouts.header')
-
+@section('header')
+<link rel="stylesheet" href="{{asset('design/assets/libs/sweetalert2/dist/sweetalert2.min.css')}}">
+@endsection
 @section('content')
 
-<form class="needs-validation" method="POST" action="{{ url('check-out') }}" novalidate>
+<form class="needs-validation" method="POST" action="{{ url('check-out-post') }}" onsubmit="return createToken(event);" enctype="multipart/form-data" id='xtana-form' novalidate>
 <div class="checkout">
   <div class="row">
     <div class="col-lg-6">
@@ -153,7 +155,9 @@
             <div class="col-sm-12 col-lg-12 text-right mt-5">
             {{-- <button class="btn btn-primary fw-bolder py-6  text-capitalize" data-bs-toggle="modal"
             data-bs-target="#bs-example-modal-lg">Get Now</button> --}}
-            <button class="btn btn-primary fw-bolder py-6  text-capitalize"  onclick='createToken()' >Pay Now</button>
+            <input type='hidden' name='stripeToken' id='stripe-token'>
+            <input type='hidden' name='last' id='last'>
+            <button class="btn btn-primary fw-bolder py-6  text-capitalize"  type='submit'>Pay Now</button>
             </div>
           </div>
         </div>
@@ -165,10 +169,8 @@
 @endsection
 @section('javascript')
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-<script src="{{asset('design/assets/libs/jquery-steps/build/jquery.steps.min.js')}}"></script>
-<script src="{{asset('design/assets/libs/jquery-validation/dist/jquery.validate.min.js')}}"></script>
-<script src="{{asset('design/assets/js/forms/form-wizard.js')}}"></script>
-<script src="{{asset('design/assets/js/apps/ecommerce.js')}}"></script>
+  <script src="{{asset('design/assets/libs/sweetalert2/dist/sweetalert2.min.js')}}"></script>
+  <script src="{{asset('design/assets/js/forms/sweet-alert.init.js')}}"></script>
 
 
 <script src="https://js.stripe.com/v3/"></script>
@@ -194,9 +196,23 @@
   cardElement.mount('#card-element');
   function createToken()
   {
-    stripe.createToken(cardElement).then(function(result){
-      console.log(result);
-    });
+      event.preventDefault();
+      stripe.createToken(cardElement).then(function(result){
+        if(result.token)
+        {
+          console.log(result.token);
+          document.getElementById('stripe-token').value = result.token.id;
+          document.getElementById('last').value = result.token.card.last4;
+          document.getElementById('xtana-form').submit();
+
+        }
+        else
+        {
+          error(result.error.message);
+        }
+    
+        
+      });
   }
 
 </script>

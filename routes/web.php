@@ -21,6 +21,7 @@ Route::get('/user-profile','UserController@profile')->name('profile');
 Route::post('edit-profile','UserController@saveProfile')->name('save-profile');
 
 Route::get('checkout','CheckOutController@index')->name('checkout');
+Route::post('check-out-post','CheckOutController@postPayment')->name('checkout');
 
 Route::get('invoices','InvoiceController@index')->name('invoices');
 

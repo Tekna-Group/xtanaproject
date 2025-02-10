@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Invoice;
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -10,6 +10,11 @@ class InvoiceController extends Controller
 
     public function index()
     {
-        return view('invoices');
+        $invoices = Invoice::where('user_id',auth()->user()->id)->orderBy('id','desc')->get();
+        return view('invoices',
+            array(
+                'invoices' => $invoices,
+            )
+        );
     }
 }
