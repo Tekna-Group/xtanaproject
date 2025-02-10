@@ -1,6 +1,49 @@
 @extends('layouts.header')
 
 @section('content')
+          @if(count(auth()->user()->invoices) > 0)
+          <section class="welcome">
+            <div class="row">
+              <div class="col-lg-12 col-xl-6 d-flex align-items-strech">
+                <div class="card w-100">
+                  <div class="card-body position-relative">
+                    <div>
+                      <h5 class="mb-1 fw-bold">Welcome {{current(explode(' ',auth()->user()->name))}}</h5>
+                      <p class="fs-3 mb-3 pb-1">Next Billing: {{date('M d,Y',strtotime("+1 month",strtotime(auth()->user()->invoices->first()->created_at)))}}</p>
+                      <button class="btn btn-primary rounded-pill" type="button">
+                        Visit Xtana Server
+                      </button>
+                    </div>
+                    <div class="school-img d-none d-sm-block">
+                      <img src="{{asset('design/assets/images/backgrounds/school.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="d-sm-none d-block text-center">
+                      <img src="{{asset('design/assets/images/backgrounds/school.png')}}" class="img-fluid" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+                  <div class="col-sm-4 d-flex align-items-strech">
+                    <div class="card info-card overflow-hidden text-bg-primary w-100">
+                      <div class="card-body p-4">
+                        <div class="mb-7">
+                          <i class="ti ti-currency-dollar fs-8 fw-lighter"></i>
+                        </div>
+                        <h5 class="text-white fw-bold fs-14 text-nowrap">
+                          $ 0.00<span class="fs-2 fw-light"></span>
+                        </h5>
+                        <p class="opacity-50 mb-0">Unpaid Invoices</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          @else
           <div class="row">
             <div class="col-sm-12 col-lg-12">
               <div class="card">
@@ -51,127 +94,7 @@
             </div>
        
           </div>
+          @endif
 
-          <div class="modal fade" id="bs-example-modal-lg" tabindex="-1"
-          aria-labelledby="bs-example-modal-lg" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header d-flex align-items-center">
-                <h4 class="modal-title" id="myLargeModalLabel">
-                  Check Out
-                </h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                  aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form class="needs-validation" method="POST" action="{{ url('edit-profile') }}" novalidate>
-                  @csrf
-                  <div class="row">
-                  
-                        <hr>
-                        <h3>
-                          Personal Information
-                        </h3>
-                    <div class="col-md-4 mb-3">
-                      <label class="form-label" for="validationCustom01">First name</label>
-                      <input type="text" class="form-control" id="validationCustom01" name='first_name'
-                        value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->first_name : '' }}" required />
-                      <div class="valid-feedback">Looks good!</div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label class="form-label" for="validationCustom03">Middle name</label>
-                      <input type="text" name='middle_name' class="form-control" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->middle_name : '' }}" id="validationCustom03" name='middle_name'
-                        value="" required />
-                      <div class="valid-feedback">Looks good!</div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label class="form-label" for="validationCustom02">Last name</label>
-                      <input type="text" class="form-control" name='last_name' value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->last_name : '' }}" id="validationCustom02" 
-                        value="" required />
-                      <div class="valid-feedback">Looks good!</div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label" for="email">Email</label>
-                      <input type="text" class="form-control" id="email"
-                        value="{{auth()->user()->email}}" required  readonly/>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label" for="contact_number">Phone number</label>
-                      <input type="text" class="form-control" id="contact_number" name='contact_number'
-                        value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->contact_number : '' }}" required  />
-                    </div>
-                 
-                  </div>
-                  <hr>
-                  <h3>
-                      Billing Information
-                    </h3>
-                  <div class="row">
-                          <div class="col-md-4 mb-3">
-                              <label class="form-label" for="company">Company (optional)</label>
-                              <input type="text" class="form-control" id="company" name='company' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->company : '' }}"  />
-                            
-                          </div>
-                          <div class="col-md-8 mb-3">
-                              <label class="form-label" for="country">Country</label>
-                              <input type="text" class="form-control" id="country" name='country' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->country : '' }}" required />
-                              <div class="invalid-feedback">
-                              Please provide a valid country.
-                              </div>
-                          </div>
-                        <div class="col-md-12 mb-3">
-                          <label class="form-label" for="address">Address</label>
-                          <input type="text" class="form-control" id="address" name='address' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->address : '' }}" required />
-                          <div class="invalid-feedback">
-                            Please provide a valid address.
-                          </div>
-                        </div>
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label" for="validationCustom03">City</label>
-                      <input type="text" class="form-control" id="validationCustom03" name='city' value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->city : '' }}" placeholder="" required />
-                      <div class="invalid-feedback">
-                        Please provide a valid city.
-                      </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label class="form-label" for="validationCustom04">State</label>
-                      <input type="text" class="form-control" id="validationCustom04" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->state : '' }}" name='state' placeholder="" required />
-                      <div class="invalid-feedback">
-                        Please provide a valid state.
-                      </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label class="form-label" for="validationCustom05">Zip Code</label>
-                      <input type="text" class="form-control" id="validationCustom05" name='zipcode' placeholder="" value="{{ auth()->check() && auth()->user()->user_profile ? auth()->user()->user_profile->zipcode : '' }}" required />
-                      <div class="invalid-feedback">
-                        Please provide a valid zip.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="form-check mr-sm-2">
-                      <input type="checkbox" class="form-check-input" id="invalidcheck1" required />
-                      <label class="form-check-label" for="invalidcheck1">Agree to terms and conditions</label>
-                      <div class="invalid-feedback">
-                        You must agree before submitting.
-                      </div>
-                    </div>
-                  </div>
-                  <button class="btn btn-primary mt-3 rounded-pill px-4" type="submit">
-                    Pay
-                  </button>
-                  <button type="button" class="btn bg-danger-subtle text-danger mt-3 px-4 waves-effect text-start"
-                  data-bs-dismiss="modal">
-                  Cancel
-                </button>
-                </form>
-              </div>
-              <div class="modal-footer">
-               
-              </div>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
+       
 @endsection
