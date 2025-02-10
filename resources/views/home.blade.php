@@ -40,9 +40,62 @@
                     </div>
                   </div>
                 </div>
+          </section>
+          <div class="card">
+            <div class="card-body">
+              <div class="d-md-flex align-items-center justify-content-between mb-4">
+                <h5 class="mb-4 mb-md-0">Workflows</h5>
+                <div class="d-sm-flex align-items-center">
+                  <form class="position-relative me-0 me-sm-3 mb-4 mb-sm-0">
+                    <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search">
+                    <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y ms-3 fs-6"></i>
+                  </form>
+                  <select class="form-select bg-light fw-bold w-auto shadow-none">
+                    <option value="1">Most recent</option>
+                    {{-- <option value="2">April 2024</option>
+                    <option value="3">May 2024</option>
+                    <option value="4">June 2024</option> --}}
+                  </select>
+                </div>
+              </div>
+              <div class="border-bottom mt-5">
+                <div class="row">
+                  <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="product hover-img mb-7">
+                      <div class="product-img position-relative rounded-1 mb-6 overflow-hidden">
+                        <a href="{{url('/')}}"><img src="{{asset('/images/Logo-Xtana.webp')}}" alt=""
+                            class="w-100"></a>
+                        <div
+                          class="cart-wishlist position-absolute top-0 end-0 d-flex align-items-center gap-6 mt-3 me-3">
+                          <a href="javascript:void(0)"
+                            class="bg-white rounded-circle d-flex align-items-center justify-content-center text-dark fs-6 p-2"><i
+                              class="ti ti-heart"></i></a>
+                          <a href="{{url('/')}}"
+                            class="bg-white rounded-circle d-flex align-items-center justify-content-center text-dark fs-6 p-2"><i
+                              class="ti ti-basket"></i></a>
+                        </div>
+                      </div>
+                      <div>
+                        <a href="{{url('/')}}">
+                          <h5 class="mb-2">Accounting Workflow</h5>
+                        </a>
+                        {{-- <div class="d-flex align-items-center mb-2">
+                          <i class="ti ti-star-filled text-warning fs-4 me-1"></i>
+                          <h6 class="mb-0 me-1">4.8</h6>
+                          <p class="mb-0">(87)</p>
+                        </div> --}}
+                        <h6 class="mb-0 fs-4 mb-3">$16.25 /month </h6>
+                        <a href='{{url("/")}}'><button class="btn btn-primary fw-bolder py-6 btn-sm  text-capitalize" >Order Now</button></a> 
+                      </div>
+                   
+                    </div>
+                   
+                  </div>
+                 
+                </div>
               </div>
             </div>
-          </section>
+          </div>
           @else
           <div class="row">
             <div class="col-sm-12 col-lg-12">
