@@ -19,8 +19,8 @@ aria-labelledby="bs-example-modal-md" aria-hidden="true">
                       <h6>&nbsp;From,</h6>
                       <h6 class="fw-bold">&nbsp;Xtana</h6>
                       <p class="ms-1">
-                        1108, Clair Street, <br />Massachusetts,
-                        <br />Woods Hole - 02543
+                        140 Metro Drive, <br />Spartanburg,
+                        <br />SC 29303
                       </p>
                     </address>
                   </div>
