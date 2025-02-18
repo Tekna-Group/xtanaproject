@@ -12,16 +12,16 @@ class ServerController extends Controller
         $createServer = $this->createServer();
         sleep(30);
         $newServer = $this->newServer($createServer->id);
-        sleep(20);
-        $createSSD = $this->createSSD($createServer->id,$newServer->id);
-        sleep(20);
         $createNetwork = $this->createNetwork($createServer->id,$newServer->id);
         $new_DataCenter = new UserDatacenter;
         $new_DataCenter->user_id = auth()->user()->id;
         $new_DataCenter->datacenterId = $createServer->id;
         $new_DataCenter->serverId = $newServer->id;
         $new_DataCenter->save();
-        
+        sleep(40);
+        $createSSD = $this->createSSD($createServer->id,$newServer->id);
+        sleep(30);
+       
     }
     public function createServer()
     {

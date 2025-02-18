@@ -45,4 +45,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Invoice::class);
     }
+    public function servers()
+    {
+        return $this->hasOne(UserDatacenter::class);
+    }
 }
