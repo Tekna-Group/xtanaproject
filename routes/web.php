@@ -33,4 +33,9 @@ Route::get('credit-cards','CreditCardController@index')->name('credit-cards');
 
 Route::get('/payment','CreditCardController@payment')->name('payment');
 
+
+//Server Creation
+
+Route::get('create-server','ServerController@create')->name('server');
+
 });

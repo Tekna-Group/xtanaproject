@@ -7,6 +7,7 @@ use App\UserProfile;
 use App\Payment;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\ServerController;
 
 class CheckOutController extends Controller
 {
@@ -70,7 +71,9 @@ class CheckOutController extends Controller
         $payment->amount = 300.00;
         $payment->last = $request->last;
         $payment->save();
-        Alert::success('Successfully Payment Posted')->persistent('Dismiss');
+        $ServerController = new ServerController;
+        $ServerController->create();
+        Alert::success('Successfully posted payment! Your server is in the process of being created. Please wait.')->persistent('Dismiss');
         return redirect('invoices');
     }
 }

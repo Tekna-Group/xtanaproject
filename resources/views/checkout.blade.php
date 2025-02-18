@@ -200,7 +200,7 @@
       stripe.createToken(cardElement).then(function(result){
         if(result.token)
         {
-          console.log(result.token);
+          document.getElementById("loader").style.display = "block";
           document.getElementById('stripe-token').value = result.token.id;
           document.getElementById('last').value = result.token.card.last4;
           document.getElementById('xtana-form').submit();
