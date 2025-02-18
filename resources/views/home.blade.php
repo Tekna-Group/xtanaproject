@@ -64,6 +64,7 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @if(auth()->user()->servers)
                           <tr>
                             <td>
                               {{auth()->user()->servers->datacenterId}}
@@ -88,6 +89,7 @@
                                 class="badge rounded-pill  @if($amen->metadata->state == "AVAILABLE") bg-success-subtle text-success border-success @else bg-danger-subtle text-danger border-danger @endif  border">{{$amen->metadata->state}}</span>
                             </td>
                           </tr>
+                          @endif
                          
                         </tbody>
                       </table>
