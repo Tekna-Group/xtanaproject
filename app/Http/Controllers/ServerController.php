@@ -12,7 +12,9 @@ class ServerController extends Controller
         $createServer = $this->createServer();
         sleep(30);
         $newServer = $this->newServer($createServer->id);
-        sleep(30);
+        sleep(20);
+        $createSSD = $this->createSSD($createServer->id,$newServer->id);
+        sleep(20);
         $createNetwork = $this->createNetwork($createServer->id,$newServer->id);
         $new_DataCenter = new UserDatacenter;
         $new_DataCenter->user_id = auth()->user()->id;
@@ -189,5 +191,35 @@ class ServerController extends Controller
         // Return the response (for testing purposes)
         return json_decode($responseBody);
         
+    }
+    public function createSSD($dataCenterId,$serverId)
+    {
+        $client = new Client();
+
+        $data = [
+            'properties' => [
+                'name' => 'Xtana Storage',
+                'type' => 'SSD',
+                'size' => 60,
+                'availabilityZone' => 'AUTO',
+                'licenceType' => 'WINDOWS2022',
+                'bootOrder' => 'AUTO',
+            ]
+        ];
+
+        $email = env('API_USERNAME');
+        $password = env('API_PASSWORD');
+        $apiUrl = "https://api.ionos.com/cloudapi/v6/datacenters/".$dataCenterId."/servers/".$serverId."/volumes";
+        // Send the POST request to the API
+        $response = $client->post($apiUrl, [
+            'json' => $data,
+            'auth' => [$email, $password]  // Add Basic Auth credentials here
+        ]);
+
+        // Get the response body
+        $responseBody = $response->getBody()->getContents();
+
+        // Return the response (for testing purposes)
+        return json_decode($responseBody);
     }
 }
