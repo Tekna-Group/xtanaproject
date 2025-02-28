@@ -12,6 +12,10 @@ use App\Http\Controllers\ServerController;
 class CheckOutController extends Controller
 {
     //
+    public function input(Request $request)
+    {
+        return view('input');
+    }
     public function index()
     {
         return view('checkout');

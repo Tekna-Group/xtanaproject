@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('UserInput','CheckOutController@input');
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {

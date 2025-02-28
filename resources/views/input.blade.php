@@ -1,25 +1,22 @@
-@extends('layouts.header')
-
+@extends('layouts.header_out')
 @section('content')
-
-<div class="card shadow-none position-relative overflow-hidden mb-4">
-    <div class="card-body d-flex align-items-center justify-content-between p-4">
-      <h4 class="fw-semibold mb-0">Chat</h4>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb mb-0">
-          <li class="breadcrumb-item">
-            <a class="text-muted text-decoration-none" href="../dark/index.html">Home</a>
-          </li>
-          <li class="breadcrumb-item" aria-current="page">Chat</li>
-        </ol>
-      </nav>
-    </div>
-  </div>
-  <div class="card overflow-hidden chat-application">
-    <div class="d-flex align-items-center justify-content-between gap-6 m-3 d-lg-none">
-    
-    </div>
-    <div class="d-flex">
+<!-- /Clients Section -->
+<div class="variable-width">
+  <div> <img data-lazy="{{asset('images/Xtana icon set_01 - Quoting & Estimation.png')}}"  title='Quoting & Estimation' class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_02 - Customer Order Processing.png')}}" title='Customer Order Processing' class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_03 - Vendor Bill Processing.png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_04 - Client Invoicing.png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_05 - Banking & Reconciliation.png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_06 - Vendor Purchase -  Order Processing.png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_07 - Cash-Flow Management.png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_08 - Inventory Control .png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_09 - Shipping & Receiving.png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_010 - Payroll Processing.png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_011 - Bill Payments.png')}}" class='renz' style='height:100px;'></div>
+  <div> <img data-lazy="{{asset('images/Xtana icon set_012 - Collections.png')}}" class='renz' style='height:100px;'></div>
+  
+</div>
+<div class="d-flex">
       <div class="w-100 w-xs-100 chat-container">
         <div class="chat-box-inner-part h-100">
           <div class="chat-not-selected h-100 d-none">
@@ -47,26 +44,11 @@
                   <p class="mb-0">Virtual Agent</p>
                 </div>
               </div>
-              <ul class="list-unstyled mb-0 d-flex align-items-center">
-                <li>
-                  <a class="text-dark px-2 fs-7 bg-hover-primary nav-icon-hover position-relative z-index-5"
-                    href="javascript:void(0)"><i class="ti ti-phone"></i></a>
-                </li>
-                <li>
-                  <a class="text-dark px-2 fs-7 bg-hover-primary nav-icon-hover position-relative z-index-5"
-                    href="javascript:void(0)"><i class="ti ti-video"></i></a>
-                </li>
-                <li>
-                  <a class="chat-menu text-dark px-2 fs-7 bg-hover-primary nav-icon-hover position-relative z-index-5"
-                    href="javascript:void(0)">
-                    <i class="ti ti-menu-2"></i>
-                  </a>
-                </li>
-              </ul>
+        
             </div>
             <div class="d-flex parent-chat-box">
-              <div class="chat-box w-xs-100 w-100">
-                <div class="chat-box-inner p-4" data-simplebar>
+              <div class="chat-box w-xs-100 w-100 " >
+                <div class="chat-box-inner p-4 " style='height:200px;'  data-simplebar>
                   
                 </div>
                 <div class="px-2 py-6 border-top chat-send-message-footer">
@@ -74,7 +56,7 @@
                     <div class="d-flex align-items-center gap-2 w-85">
                       <a class="position-relative nav-icon-hover z-index-5" href="javascript:void(0)">
                         <i class="ti ti-mood-smile text-dark bg-hover-primary fs-7"></i></a>
-                      <input type="text" class="form-control message-type-box text-muted border-0 p-0 ms-2"
+                      <input type="text" class="form-control message-type-box text-muted  p-0 ms-2"
                         placeholder="Type a Message" fdprocessedid="0p3op" />
                     </div>
                     <ul class="list-unstyledn mb-0 d-flex align-items-center">
@@ -339,7 +321,16 @@
         </div>
       </div>
     </div>
-  </div>
-@endsection
-@section('javascript')
-@endsection
+    <script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    </script>
+
+
+
+
+
+    @endsection
