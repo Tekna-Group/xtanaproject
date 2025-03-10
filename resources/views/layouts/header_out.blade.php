@@ -31,15 +31,79 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <style>
-.slick-prev:before, .slick-next:before { 
-    color:red !important;
+    .slick-prev:before, .slick-next:before { 
+        color:green !important;
+    }
+    .renz {
+      transition: filter 0.3s ease, color 0.3s ease;
+    }
+    .renz:hover {
+      filter: sepia(1) saturate(6) hue-rotate(100deg) brightness(.8);
+    }
+    .filter-green:hover {
+      filter: grayscale(100%) brightness(0%);
+    }
+
+        .move-up {
+            margin-top: -25px; /* Adjust the negative value to move the icon up */
+            margin-left: -70px; /* Adjust the negative value to move the icon up */
+        }
+        .move-left {
+            margin-top: -40px; /* Adjust the negative value to move the icon up */
+            margin-left: 40px; /* Adjust the negative value to move the icon up */
+        }
+        .green-icon {
+          filter: invert(30%) sepia(60%) saturate(500%) hue-rotate(120deg);
+
+        }
+        .filter-rgb {
+          /* filter: grayscale(100%) brightness(0%) saturate(120%) contrast(121%); */
+          opacity: 0.3 !important;
+      }
+      .font{
+        font-size:15px;
+      }
+
+      /* Default (large screens) */
+body {
+    font-size: 18px;
 }
-.renz {
-  transition: filter 0.3s ease;
+
+/* Small screens (Mobile) */
+@media (max-width: 480px) {
+  .font {
+        font-size: 8px;  /* Even smaller font size for small screens */
+        
+    }
+    
 }
-.renz:hover {
-  filter: sepia(1) saturate(6) hue-rotate(80deg);
+
+/* Medium screens (Tablets) */
+@media (max-width: 768px) {
+  .font {
+        font-size: 12px;  /* Smaller font size for medium screens */
+    }
+
+  
 }
+
+/* Larger tablets / small laptops */
+@media (max-width: 1024px) {
+  .move-up {
+            margin-top: -25px; /* Adjust the negative value to move the icon up */
+            margin-left: -20px; /* Adjust the negative value to move the icon up */
+        }
+   
+}
+
+/* Large screens (Desktops and bigger) */
+
+
+
+/* For screens with a minimum width of 768px (medium to large screens) */
+
+     
+
 </style>
     <!-- <title>Spike Bootstrap Admin</title> -->
 </head>
@@ -63,10 +127,10 @@
               <div class="card-body mt-5">
                 <a href="https://xtana.ai/" class="" target='_blank'>
                   <img
-                    src="{{asset('images/Logo-Xtana.webp')}}"
+                    src="{{asset('xtana/XTANA_LOGO.svg')}}"
                     class="light-logo"
                     alt="Logo-Dark"
-                    style='width:178px;height:40px;'
+                    style='width:250px;'
                   />
                  
                 </a>
@@ -112,7 +176,7 @@
     <script>
         $('.variable-width').slick({
             arrows: true,
-            slidesToShow: 10,
+            slidesToShow: 5,
             slidesToScroll: 1,
             arrows: true,
             
@@ -120,10 +184,10 @@
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 10,
+        slidesToShow: 5,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
+        dots: false,
       }
     },
     {
@@ -132,7 +196,7 @@
         slidesToShow: 5,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
+        dots: false
       }
     },
     {
