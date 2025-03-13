@@ -6,94 +6,95 @@
 
   <div class='text-center'> 
     <a class='process' href='#'>
-    <img data-lazy="{{asset('xtana/3.png')}}"  title='Vendor Bill Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/3.png')}}"  title='Vendor Bill Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Vendor Bill Processing</strong></b>
     </a>
   </div>
   <div class='text-center'> 
-    
-    <img data-lazy="{{asset('xtana/4.png')}}"  title='Client Invoicing' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
-    <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
-    </div>
-    
-    <b><strong class='font'>Client Invoicing</strong></b>
+    <a class='process' href='#'>
+      <img data-lazy="{{asset('xtana/4.png')}}"  title='Client Invoicing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
+      <div class='d-flex justify-content-end'>
+        {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+        <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
+      </div>
+      
+      <b><strong class='font'>Client Invoicing</strong></b>
+    </a>
   </div>
   <div class='text-center'> 
-    <img data-lazy="{{asset('xtana/5.png')}}"  title='Banking & Reconciliation' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/5.png')}}"  title='Banking & Reconciliation' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Banking & Reconciliation</strong></b>
   </div>
   <div class='text-center'> 
     
-    <img data-lazy="{{asset('xtana/6.png')}}"  title='Vendor Purchase -  Order Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/6.png')}}"  title='Vendor Purchase -  Order Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Vendor Purchase -  Order Processing</strong></b>
   </div>
   <div class='text-center'> 
-    <img data-lazy="{{asset('xtana/7.png')}}"  title='Cash-Flow Management' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/7.png')}}"  title='Cash-Flow Management' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Cash-Flow Management</strong></b>
   </div>
   <div class='text-center'> 
-    <img data-lazy="{{asset('xtana/8.png')}}"  title='Inventory Control' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/8.png')}}"  title='Inventory Control' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Inventory Control</strong></b>
   </div>
   <div class='text-center'> 
-    <img data-lazy="{{asset('xtana/9.png')}}"  title='Shipping & Receiving' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/9.png')}}"  title='Shipping & Receiving' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Shipping & Receiving</strong></b>
   </div>
   <div class='text-center'> 
-    <img data-lazy="{{asset('xtana/10.png')}}"  title='Payroll Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/10.png')}}"  title='Payroll Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Payroll Processing</strong></b>
   </div>
   <div class='text-center'> 
-    <img data-lazy="{{asset('xtana/11.png')}}"  title='Bill Payments' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/11.png')}}"  title='Bill Payments' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Bill Payments</strong></b>
   </div>
   <div class='text-center'> 
-    <img data-lazy="{{asset('xtana/12.png')}}"  title='Collections' class="img-fluid filter-rgb  mx-auto d-block" style='width:100px; '>
+    <img data-lazy="{{asset('xtana/12.png')}}"  title='Collections' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
-      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
-      <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
+      {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
+      <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
     </div>
     
     <b><strong class='font'>Collections</strong></b>
@@ -142,7 +143,7 @@
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center gap-2 w-85">
                       <a class="position-relative nav-icon-hover z-index-5" href="javascript:void(0)">
-                        <img src="{{asset('xtana/MESSENGER_ICON.svg')}}" width="30px" height="50px" >
+                        <img src="{{asset('xtana/MESSENGER_ICON.svg')}}" width="40px" height="50px" >
                         {{-- <i class="ti ti-mood-smile text-dark bg-hover-primary fs-7"></i> --}}
                       </a>
                       <input type="text" class="form-control message-type-box text-muted  p-0 ms-2"
@@ -169,29 +170,31 @@
             <hr>
             <div class="variable-width ">
               <div class='text-center '> 
-                
-                <img data-lazy="{{asset('images/Xtana icon set_01 - Quoting & Estimation.png')}}"  title='Quoting & Estimation' class="img-fluid renz mx-auto d-block" class='renz text-center' style='width:100px; '>
+                <a class='process' href='#'>
+                <img data-lazy="{{asset('images/Xtana icon set_01 - Quoting & Estimation.png')}}"  title='Quoting & Estimation' class="img-fluid renz mx-auto d-block" class='renz text-center' style='width:120px; '>
                 
                  
                   
                 <div class='d-flex justify-content-end'>
-                  <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
-                  {{-- <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
+                  <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
+                  {{-- <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
                 </div>
                 <b><strong class='font'>Quoting & Estimation</strong></b>
+                </a>
               </div>
               <div class='text-center'> 
-                
-                <img data-lazy="{{asset('images/Xtana icon set_02 - Customer Order Processing.png')}}"  title='Customer Order Processing' class="img-fluid renz mx-auto d-block" class='renz text-center' style='width:100px; '>
+                <a class='process' href='#'>
+                <img data-lazy="{{asset('images/Xtana icon set_02 - Customer Order Processing.png')}}"  title='Customer Order Processing' class="img-fluid renz mx-auto d-block" class='renz text-center' style='width:120px; '>
                 
                  
                   
                 <div class='d-flex justify-content-end'>
-                  <a href='#'><img src="{{asset('xtana/aa.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a>
-                  {{-- <a href='#'><img src="{{asset('xtana/add.png')}}" width="30px" height="30px" class='plus-image text-right move-up '></a> --}}
+                  <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
+                  {{-- <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
                 </div>
                 
                 <b><strong class='font'>Customer Order Processing</strong></b>
+                </a>
               </div>
              
               

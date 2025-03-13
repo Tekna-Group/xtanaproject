@@ -42,7 +42,7 @@
           transition: filter 0.3s ease, color 0.3s ease;
         }
         .renz:hover {
-          filter: sepia(1) saturate(6) hue-rotate(100deg) brightness(.8);
+          filter: grayscale(1) brightness(0) contrast(100%);
         }
         .filter-green:hover {
           filter: grayscale(100%) brightness(0%);
@@ -50,7 +50,7 @@
 
             .move-up {
                 margin-top: -25px; /* Adjust the negative value to move the icon up */
-                margin-left: -70px; /* Adjust the negative value to move the icon up */
+                margin-left: -80px; /* Adjust the negative value to move the icon up */
             }
             .move-left {
                 margin-top: -40px; /* Adjust the negative value to move the icon up */
