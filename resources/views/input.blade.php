@@ -4,8 +4,8 @@
 
 <div class="variable-width  ">
 
-  <div class='text-center'> 
-    <a class='process' href='#'>
+  <div class='text-center' > 
+    <a class='process' href='#' onclick="vendor_name('Vendor Bill Processing')">
     <img data-lazy="{{asset('xtana/3.png')}}"  title='Vendor Bill Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -16,7 +16,7 @@
     </a>
   </div>
   <div class='text-center'> 
-    <a class='process' href='#'>
+    <a class='process' href='#' onclick="vendor_name('Client Invoicing')">
       <img data-lazy="{{asset('xtana/4.png')}}"  title='Client Invoicing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
       <div class='d-flex justify-content-end'>
         {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -27,6 +27,7 @@
     </a>
   </div>
   <div class='text-center'> 
+    <a class='process' href='#' onclick="vendor_name('Banking & Reconciliation')">
     <img data-lazy="{{asset('xtana/5.png')}}"  title='Banking & Reconciliation' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -34,9 +35,10 @@
     </div>
     
     <b><strong class='font'>Banking & Reconciliation</strong></b>
+    </a>
   </div>
   <div class='text-center'> 
-    
+    <a class='process' href='#' onclick="vendor_name('Vendor Purchase -  Order Processing')">
     <img data-lazy="{{asset('xtana/6.png')}}"  title='Vendor Purchase -  Order Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -44,8 +46,10 @@
     </div>
     
     <b><strong class='font'>Vendor Purchase -  Order Processing</strong></b>
+    </a>
   </div>
   <div class='text-center'> 
+    <a class='process' href='#' onclick="vendor_name('Cash-Flow Management')">
     <img data-lazy="{{asset('xtana/7.png')}}"  title='Cash-Flow Management' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -53,8 +57,10 @@
     </div>
     
     <b><strong class='font'>Cash-Flow Management</strong></b>
+    </a>
   </div>
   <div class='text-center'> 
+    <a class='process' href='#' onclick="vendor_name('Inventory Control')">
     <img data-lazy="{{asset('xtana/8.png')}}"  title='Inventory Control' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -62,8 +68,10 @@
     </div>
     
     <b><strong class='font'>Inventory Control</strong></b>
+    </a>
   </div>
   <div class='text-center'> 
+    <a class='process' href='#' onclick="vendor_name('Vendor Purchase -  Order Processing')">
     <img data-lazy="{{asset('xtana/9.png')}}"  title='Shipping & Receiving' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -71,8 +79,10 @@
     </div>
     
     <b><strong class='font'>Shipping & Receiving</strong></b>
+    </a>
   </div>
   <div class='text-center'> 
+    <a class='process' href='#' onclick="vendor_name('Payroll Processing')">
     <img data-lazy="{{asset('xtana/10.png')}}"  title='Payroll Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -80,8 +90,10 @@
     </div>
     
     <b><strong class='font'>Payroll Processing</strong></b>
+    </a>
   </div>
   <div class='text-center'> 
+    <a class='process' href='#' onclick="vendor_name('Bill Payments')">
     <img data-lazy="{{asset('xtana/11.png')}}"  title='Bill Payments' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -89,8 +101,10 @@
     </div>
     
     <b><strong class='font'>Bill Payments</strong></b>
+    </a>
   </div>
   <div class='text-center'> 
+    <a class='process' href='#' onclick="vendor_name('Collections')">
     <img data-lazy="{{asset('xtana/12.png')}}"  title='Collections' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
@@ -98,6 +112,7 @@
     </div>
     
     <b><strong class='font'>Collections</strong></b>
+    </a>
   </div>
   
 </div>
@@ -126,7 +141,7 @@
                 </div>
                 <div>
                   <h6 class="mb-1 name fw-semibold"></h6>
-                  <p class="mb-0">Virtual Agent</p>
+                  <p class="mb-0">Virtual Agent <span id='agent_name'></span></p>
                 </div>
               </div>
         
@@ -170,7 +185,8 @@
             <hr>
             <div class="variable-width ">
               <div class='text-center '> 
-                <a class='process' href='#'>
+                <a class='process' href='#' onclick="vendor_name('Quoting & Estimation')">
+   
                 <img data-lazy="{{asset('images/Xtana icon set_01 - Quoting & Estimation.png')}}"  title='Quoting & Estimation' class="img-fluid renz mx-auto d-block" class='renz text-center' style='width:120px; '>
                 
                  
@@ -183,7 +199,8 @@
                 </a>
               </div>
               <div class='text-center'> 
-                <a class='process' href='#'>
+                <a class='process' href='#' onclick="vendor_name('Customer Order Processing')">
+   
                 <img data-lazy="{{asset('images/Xtana icon set_02 - Customer Order Processing.png')}}"  title='Customer Order Processing' class="img-fluid renz mx-auto d-block" class='renz text-center' style='width:120px; '>
                 
                  
@@ -209,7 +226,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    
-
+        <script>
+          function vendor_name(name)
+          {
+            document.getElementById("agent_name").innerHTML = " - " +name;
+          }
+        </script>
 
 
 
