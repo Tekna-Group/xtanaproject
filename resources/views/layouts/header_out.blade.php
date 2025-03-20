@@ -64,6 +64,11 @@
               /* filter: grayscale(100%) brightness(0%) saturate(120%) contrast(121%); */
               opacity: 0.3 !important;
           }
+          .filter-rgb:hover {
+              /* filter: grayscale(100%) brightness(0%) saturate(120%) contrast(121%); */
+              opacity: 1 !important;
+              filter: grayscale(1) brightness(0) contrast(100%);
+          }
           .font{
             font-size:15px;
           }

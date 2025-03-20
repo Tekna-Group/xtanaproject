@@ -6,7 +6,7 @@
 
   <div class='text-center' > 
     <a class='process' href='#' onclick="vendor_name('Vendor Bill Processing')">
-    <img data-lazy="{{asset('xtana/3.png')}}"  title='Vendor Bill Processing' class="img-fluid filter-rgb  mx-auto d-block" style='width:120px; '>
+    <img data-lazy="{{asset('xtana/3.png')}}"  title='Vendor Bill Processing' class="img-fluid filter-rgb renz mx-auto d-block" style='width:120px; '>
     <div class='d-flex justify-content-end'>
       {{-- <a href='#'><img src="{{asset('xtana/aa.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a> --}}
       <a href='#'><img src="{{asset('xtana/add.png')}}" width="40px" height="40px" class='plus-image text-right move-up '></a>
