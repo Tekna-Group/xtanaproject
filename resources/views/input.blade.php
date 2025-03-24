@@ -149,31 +149,9 @@
             
             <div class="d-flex parent-chat-box">
               <div class="chat-box w-xs-100 w-100 " >
-                <div class="chat-box-inner p-7 " style='height:200px;background-color:#D3F9D8 ;'  data-simplebar>
+                <div class="chat-box-inner p-7 " style='height:300px;background-color:#D3F9D8 ;'  data-simplebar>
                   
                   <div class="chat-list chat active-chat" data-user-id="1">
-                    <div class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                      <img src="{{asset('xtana/VIRTUAL_AGENT_ICON.svg')}}" alt="user8" width="40" height="40"
-                        class="rounded-circle" />
-                      <div>
-                        <h6 class="fs-2 text-muted">
-                          {{-- Name --}}Virtual Agent
-                        </h6>
-                        <div class="p-2 text-bg-light rounded-1 d-inline-block text-dark fs-3">
-                          If I don’t like something, I’ll stay away
-                          from it.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="hstack gap-3 align-items-start mb-7 justify-content-end">
-                      <div class="text-end">
-                        <h6 class="fs-2 text-muted">2 hours ago</h6>
-                        <div class="p-2 bg-info-subtle text-dark rounded-1 d-inline-block fs-3">
-                          If I don’t like something, I’ll stay away
-                          from it.
-                        </div>
-                      </div>
-                    </div>
                    
                   </div>
                
@@ -181,7 +159,7 @@
                 </div>
                 
                 <div class="px-2 py-6 border-top chat-send-message-footer">
-                  <form >
+                  <form id="myForm">
                   <div class="d-flex align-items-center justify-content content-ai">
                     <div class="d-flex align-items-center gap-2 w-90">
                       <a class="position-relative nav-icon-hover z-index-5" href="javascript:void(0)">
@@ -189,12 +167,14 @@
                         {{-- <i class="ti ti-mood-smile text-dark bg-hover-primary fs-7"></i> --}}
                       </a>
                       <input type="text" class="form-control message-type-box text-muted  p-0 ms-2"
-                        placeholder="Type a Message" fdprocessedid="0p3op" />
+                        placeholder="Type a Message" fdprocessedid="0p3op" required id='message'/>
                     </div>
                     <ul class="list-unstyledn mb-0 d-flex align-items-center ml-3">
                       <li>
-                        <a class="text-dark  bg-hover-primary nav-icon-hover position-relative z-index-5"
-                          href="javascript:void(0)" onclick=''><i class="ti ti-send"></i></a>
+                        <button id='submitbutton' type="submit" class="text-dark bg-hover-primary nav-icon-hover position-relative z-index-5">
+                          <i class="ti ti-send"></i>
+                      </button>
+                      
                       </li>
                       {{-- <li>
                         <a class="text-dark px-2 fs-7 bg-hover-primary nav-icon-hover position-relative z-index-5"
@@ -206,6 +186,7 @@
                       </li> --}}
                     </ul>
                   </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -257,6 +238,126 @@
           function vendor_name(name)
           {
             document.getElementById("agent_name").innerHTML = " - " +name;
+          }
+          function sendMessage(event)
+          {
+            event.preventDefault();
+           
+            show();
+          }
+        </script>
+        <script>
+          // Listen for form submission
+          $('#myForm').on('submit', function(e) {
+              e.preventDefault(); // Prevent the default form submission
+              document.getElementById('submitbutton').disabled = true;
+              // show();
+              // Get form data
+              var formData = $(this).serialize();
+             
+              var message= document.getElementById("message").value; // Get the message from the input
+             
+               document.getElementById("message").value == ""; // Clear the input after sending
+// Don't send if the message is empty
+
+        // Display the user's message immediately
+               appendMessage(message, 'you');
+               appendMessage("Loading... ", 'agent');
+               
+              scrollToBottom();
+
+              $.ajax({
+                  url: '{{url("/send-message")}}',  // Replace with your actual route
+                  method: 'POST',
+                  data: {
+                      message: message,
+                      _token: '{{ csrf_token() }}'  // Ensure CSRF token is sent if using Laravel
+                  },
+                  success: function(response) {
+                    console.log(response.content);
+                    removeLastDive();
+                      // Append the response message (could be from an agent or processed response)
+                      appendSuccessMessage(response.content[0].text, 'agent');  // Assume response has { message: "Agent's response" }
+                      document.getElementById("message").value = "";
+                      // Scroll to the bottom after appending the new message
+                      scrollToBottom();
+                  },
+                  error: function(xhr, status, error) {
+                      console.error("Error sending message:", error);
+                  }
+              });
+              // Send Ajax POST request
+          });
+          
+          // Function to scroll to the bottom of the chat container
+          function scrollToBottom() {
+            const chatList = document.querySelector('.chat-list');
+            chatList.scrollTop = chatList.scrollHeight;
+          }
+        
+          // Call the function when the page loads to ensure it's at the bottom
+          document.addEventListener('DOMContentLoaded', function() {
+            scrollToBottom();
+          });
+          function appendMessage(message, sender) {
+            var messageHTML = `
+              <div class="hstack gap-3 align-items-start mb-7 justify-content-${sender === 'agent' ? 'start' : 'end'}">
+              ${sender === 'agent' ? `<img src="{{asset('xtana/VIRTUAL_AGENT_ICON.svg')}}" alt="Virtual Agent" width="40" height="40" class="rounded-circle" />` : ''}
+                <div>
+                  <h6 class="fs-2 text-muted">
+                    ${sender === 'agent' ? 'Virtual Agent' : 'You'}
+                  </h6>
+                  <div class="p-2  ${sender === 'agent' ? 'text-bg-light' : 'bg-info-subtle'} text-dark rounded-1 d-inline-block fs-3">
+                    ${message}
+                    ${sender === 'agent' ? '<div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>' : ''}
+                  </div>
+                </div>
+              </div>
+            `;
+
+            // Append the new message to the chat list
+            document.querySelector('.chat-list').insertAdjacentHTML('beforeend', messageHTML);
+
+            // Scroll to the bottom after appending the new message
+            scrollToBottom();
+            document.getElementById('submitbutton').disabled = false;
+          }
+          function appendSuccessMessage(message, sender) {
+            var messageHTML = `
+              <div class="hstack gap-3 align-items-start mb-7 justify-content-${sender === 'agent' ? 'start' : 'end'}">
+              ${sender === 'agent' ? `<img src="{{asset('xtana/VIRTUAL_AGENT_ICON.svg')}}" alt="Virtual Agent" width="40" height="40" class="rounded-circle" />` : ''}
+                <div>
+                  <h6 class="fs-2 text-muted">
+                    ${sender === 'agent' ? 'Virtual Agent' : 'You'}
+                  </h6>
+                  <div class="p-2 w-50 ${sender === 'agent' ? 'text-bg-light' : 'bg-info-subtle'} text-dark rounded-1 d-inline-block fs-3">
+                    ${message}
+                  </div>
+                </div>
+              </div>
+            `;
+
+            // Append the new message to the chat list
+            document.querySelector('.chat-list').insertAdjacentHTML('beforeend', messageHTML);
+
+            // Scroll to the bottom after appending the new message
+            scrollToBottom();
+          }
+          function removeLastDive()
+          {
+            const chatList = document.querySelector('.chat-list');
+
+// Check if .chat-list exists
+            if (chatList) {
+                // Find the last .hstack element inside .chat-list
+                const lastHstack = chatList.querySelector('.hstack:last-of-type');
+                
+                // Check if the last .hstack exists
+                if (lastHstack) {
+                    // Remove the last .hstack
+                    lastHstack.remove();
+                }
+            }
           }
         </script>
 

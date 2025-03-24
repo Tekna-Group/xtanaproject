@@ -104,6 +104,10 @@
             }
       
     }
+    .chat-list {
+  height: 200px; /* Ensure height is set */
+  overflow-y: auto; /* Enables scrolling */
+}
 
     /* Large screens (Desktops and bigger) */
 
@@ -113,10 +117,24 @@
 
 
 </style>
+<style>
+  .loader {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: url("{{ asset('/images/loader.gif') }}") 50% 50% no-repeat white;
+      opacity: .8;
+      background-size: 120px 120px;
+  }
+</style>
     <!-- <title>Spike Bootstrap Admin</title> -->
 </head>
 <body>
-
+  <div id="loader" style="display:none;" class="loader">
+  </div>
     <div class="preloader">
         <img
           src="{{asset('design/assets/images/logos/loader.svg')}}"
@@ -227,7 +245,9 @@
     // instead of a settings object
   ]
             });
-      
+            function show() {
+            document.getElementById("loader").style.display = "block";
+        }
         </script>
     
 </body>

@@ -39,3 +39,5 @@ Route::get('/payment','CreditCardController@payment')->name('payment');
 Route::get('create-server','ServerController@create')->name('server');
 
 });
+
+Route::post('send-message','ChatController@submitMessage')->name('submit-message');
