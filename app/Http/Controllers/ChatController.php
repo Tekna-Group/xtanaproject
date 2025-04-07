@@ -15,24 +15,17 @@ class ChatController extends Controller
 
     public function submitMessage(Request $request){
       
-         
+                // dd($request->group);
                 $client = new Client();
 
-                $response = $client->post('https://api.anthropic.com/v1/messages', [
-                    'headers' => [
-                        'x-api-key' => env('CHAT_API'),
-                        'anthropic-version' => '2023-06-01',
-                        'content-type' => 'application/json',
-                    ],
+                $response = $client->post('https://llm-api.xtana.ai/api/generate', [
+                   
                     'json' => [
-                        'model' => 'claude-3-5-sonnet-20241022',
-                        'max_tokens' => 1024,
-                        'messages' => [
-                            ['role' => 'user', 'content' => $request->message],
-                        ],
+                        'group' => $request->group,
+                        'query' => $request->message,
                     ],
                 ]);
-
+                
                 // Get the JSON response
                 $data = json_decode($response->getBody()->getContents(), true);
 

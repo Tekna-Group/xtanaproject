@@ -235,9 +235,11 @@
         <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    
         <script>
+          var agent_name = "xtana";
           function vendor_name(name)
           {
             document.getElementById("agent_name").innerHTML = " - " +name;
+            agent_name = name;
           }
           function sendMessage(event)
           {
@@ -254,7 +256,7 @@
               // show();
               // Get form data
               var formData = $(this).serialize();
-             
+              alert(agent_name);
               var message= document.getElementById("message").value; // Get the message from the input
              
                document.getElementById("message").value == ""; // Clear the input after sending
@@ -271,13 +273,14 @@
                   method: 'POST',
                   data: {
                       message: message,
+                      group: agent_name,
                       _token: '{{ csrf_token() }}'  // Ensure CSRF token is sent if using Laravel
                   },
                   success: function(response) {
                     console.log(response.content);
                     removeLastDive();
                       // Append the response message (could be from an agent or processed response)
-                      appendSuccessMessage(response.content[0].text, 'agent');  // Assume response has { message: "Agent's response" }
+                      appendSuccessMessage(response, 'agent');  // Assume response has { message: "Agent's response" }
                       document.getElementById("message").value = "";
                       // Scroll to the bottom after appending the new message
                       scrollToBottom();
