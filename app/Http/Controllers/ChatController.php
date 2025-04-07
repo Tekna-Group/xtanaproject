@@ -28,7 +28,6 @@ class ChatController extends Controller
                 
                 // Get the JSON response
                 $data = json_decode($response->getBody()->getContents(), true);
-                $data = json_decode($response, true);
 
                 // Handle the response as needed
                 return response()->json($data);
