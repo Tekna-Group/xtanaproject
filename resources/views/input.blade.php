@@ -256,7 +256,7 @@
               // show();
               // Get form data
               var formData = $(this).serialize();
-              alert(agent_name);
+              // alert(agent_name);
               var message= document.getElementById("message").value; // Get the message from the input
              
                document.getElementById("message").value == ""; // Clear the input after sending
