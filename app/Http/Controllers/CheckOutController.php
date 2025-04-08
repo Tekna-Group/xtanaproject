@@ -5,16 +5,165 @@ use App\Invoice;
 use App\InvoiceItem;
 use App\UserProfile;
 use App\Payment;
+use Goutte\Client;
+use Smalot\PdfParser\Parser;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\ServerController;
+use App\Group;
+use App\Document;
+use Spatie\Browsershot\Browsershot;
+
+use Illuminate\Support\Facades\Validator;
 
 class CheckOutController extends Controller
 {
     //
+   
     public function input(Request $request)
     {
         return view('input');
+    }
+    public function upload(Request $request)
+    {
+        $groups = Group::get();
+        return view('upload_data',
+        array(
+            'groups' => $groups,
+        )
+        );
+    }
+    public function uploadLink(Request $request)
+    {
+        $content = $this->scrape($request);
+  
+        $content = $content->getData();
+
+        // Now, you have the data part of the response, which is a PHP object or array
+        // If you want to convert it to an array, you can use (if it's an object):
+        $dataArray = (array) $content;
+        // dd($content);
+        // Or you can directly access it as an object
+        // return $data;
+        // Add the scraped content to the request data
+        $request->merge([
+            'content' => json_encode($content),
+        ]);
+    
+        // Call the store method with the original request
+       $this->store($request);
+       Alert::success('Successfully Uploaded')->persistent('Dismiss');
+       return back();
+    }
+    public function uploadPdf(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'pdf' => 'required|file|mimes:pdf|max:10240', // Max size 10MB
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ], 422); // 422 = Unprocessable Entity
+        }
+
+        // Get the uploaded file
+        $pdf = $request->file('pdf');
+        $content = $this->extractContentFromPdf($pdf);
+        // dd($content);
+  
+        // $content = $content->getData();
+
+        // Now, you have the data part of the response, which is a PHP object or array
+        // If you want to convert it to an array, you can use (if it's an object):
+        // $dataArray = (array) $content;
+        // dd($content);
+        // Or you can directly access it as an object
+        // return $data;
+        // Add the scraped content to the request data
+        $request->merge([
+            'content' => json_encode($content),
+        ]);
+    
+        // Call the store method with the original request
+       $this->store($request);
+       Alert::success('Successfully Uploaded')->persistent('Dismiss');
+       return back();
+    }
+    private function extractContentFromPdf($pdf)
+    {
+        // Instantiate the PDF parser
+        $parser = new Parser();
+
+        // Parse the uploaded PDF file
+        $pdfContent = $parser->parseFile($pdf->getRealPath());
+
+        // Extract text content from the PDF
+        $text = $pdfContent->getText();
+
+        // Return the extracted text (You can also perform additional cleaning if needed)
+        return $text;
+    }
+    public function scrape(Request $request)
+    {
+        $url = $request->url; // Replace with the website you want to scrape
+        
+        // Initialize Goutte Client
+        $client = new Client();
+
+        // Make a request to the website
+        $crawler = $client->request('GET', $url);
+
+        // Example: Get the page title
+        $title = $crawler->filter('title')->text();
+
+        // Example: Get the first paragraph's text
+        $firstParagraph = $crawler->filter('p')->first()->text();
+
+        // Example: Get all links on the page
+        $links = $crawler->filter('a')->each(function ($node) {
+            return $node->link()->getUri();
+        });
+
+        // Example: Get all headings (h1, h2, h3, etc.)
+        $headings = $crawler->filter('h1, h2, h3')->each(function ($node) {
+            return $node->text();
+        });
+
+        return response()->json([
+            'title' => $title,
+            'first_paragraph' => $firstParagraph,
+            'links' => $links,
+            'headings' => $headings,
+        ]);
+    }
+    public function store(Request $request)
+    {
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'group' => 'required|string',
+            'title' => 'required|string',
+            'content' => 'required|string',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ], 422); // 422 = Unprocessable Entity
+        }
+
+        // Store document in MySQL
+        $document = Document::create([
+            'title' => $request->input('title'),
+            'group' => $request->input('group'),
+            'content' => $request->input('content'),
+        ]);
+        Alert::success('Successfully Uploaded')->persistent('Dismiss');
+        return back();
+
+
     }
     public function index()
     {

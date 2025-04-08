@@ -249,6 +249,6 @@
             document.getElementById("loader").style.display = "block";
         }
         </script>
-    
+    @include('sweetalert::alert')
 </body>
 </html>

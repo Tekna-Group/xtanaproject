@@ -11,6 +11,10 @@
 |
 */
 Route::get('UserInput','CheckOutController@input');
+Route::get('upload','CheckOutController@upload');
+Route::post('upload','CheckOutController@store');
+Route::post('upload-link','CheckOutController@uploadLink');
+Route::post('upload-pdf','CheckOutController@uploadPdf');
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {

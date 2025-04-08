@@ -17,7 +17,7 @@ class CreateDocuments extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('group');
-            $table->fullText('content');
+            $table->string('content');
             $table->timestamps();
         });
     }
