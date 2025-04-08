@@ -31,6 +31,26 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <style>
+      /* Style for the scrollbar itself */
+::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+/* Style for the scrollbar track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Light gray background */
+}
+
+/* Style for the scrollbar thumb (the part you drag) */
+::-webkit-scrollbar-thumb {
+    background-color: green; /* Green color for the thumb */
+    border-radius: 10px; /* Optional: rounded corners for the thumb */
+}
+
+/* Style for the scrollbar when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background-color: darkgreen; /* Darker green when hovered */
+}
         .slick-prev:before, .slick-next:before { 
             color:green !important;
         }
